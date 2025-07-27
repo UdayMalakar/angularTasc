@@ -1,0 +1,53 @@
+<!-- Logo + Login -->
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+  <div>
+    <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Logo" style="height: 40px;">
+  </div>
+  <div>
+    <button *ngIf="!authService.isLoggedInVar" routerLink="/login" style="padding: 8px 16px; background-color: #1976d2; color: white; border: none; border-radius: 4px; cursor: pointer;">Login</button>
+<button *ngIf="authService.isLoggedInVar" (click)="authService.logout()" style="padding: 8px 16px; background-color: #1976d2; color: white; border: none; border-radius: 4px; cursor: pointer;">Logout</button>
+  </div>
+</div>
+
+
+<div style="text-align: center; margin-top: 20px;">
+  <button *ngIf="authService.isLoggedInVar"  [routerLink]="['/createPost', authService.getUserId()]"
+    style="padding: 10px 20px; background-color: green; color: white; border: none; border-radius: 4px;">
+    ➕ Create Post
+  </button>
+
+  <div style="text-align: center; margin-top: 20px;">
+  <button *ngIf="authService.isLoggedIn() && authService.getRole() === 'ADMIN'" routerLink="/createUser"
+    style="padding: 10px 20px; background-color: green; color: white; border: none; border-radius: 4px;">
+    ➕ Create User
+  </button>
+
+
+  <!-- Show User List button only for ADMIN -->
+<button *ngIf="authService.isLoggedIn() && authService.getRole() === 'ADMIN'"
+  routerLink="/userDetails"
+  style="padding: 10px 20px; background-color: purple; color: white; border: none; border-radius: 4px;">
+  👥 User List
+</button>
+
+<button *ngIf="authService.isLoggedIn()"
+  routerLink="/posts"
+  style="padding: 10px 20px; background-color: purple; color: white; border: none; border-radius: 4px;">
+  👥 PostPage
+</button>
+
+<!-- Show Profile for both USER and ADMIN -->
+<button *ngIf="authService.isLoggedIn()"
+  [routerLink]="['/profile', authService.getUserId()]"
+  style="padding: 10px 20px; background-color: green; color: white; border: none; border-radius: 4px; margin-left: 10px;">
+  👤 Profile
+</button>
+
+
+<!-- Center Home Text -->
+<h1 style="text-align: center; margin-top: 50px;">🏠 Home</h1>
+
+<!-- Some Info Text -->
+<p style="text-align: center; font-size: 18px; margin-top: 20px;">
+  Welcome to the Home Page! This is a simple Angular page layout using inline CSS.
+</p>
