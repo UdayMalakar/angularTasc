@@ -1,0 +1,55 @@
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+.user-card {
+  background: #f9f9f9;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.user-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.user-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #aaa;
+}
+
+.user-info {
+  color: #444;
+  font-size: 14px;
+}
+
+.username {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  display: block;
+}

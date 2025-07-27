@@ -1,0 +1,23 @@
+<h2 class="heading">All Users</h2>
+<ul class="user-list">
+  <li *ngFor="let user of users" class="user-card">
+    <div class="user-content" (click)="viewUser(user.id)">
+      <img
+        [src]="getAvatarUrl(user.username)"
+        alt="Profile"
+        class="profile-img"
+      />
+      <div class="user-info">
+        <strong class="username">{{ user.username }}</strong>
+        <small>Email: {{ user.email }}</small><br />
+        <small>DOB: {{ user.dateOfBirth }}</small><br />
+        <small>Address: {{ user.address }}</small>
+      </div>
+    </div>
+
+    <!-- ✅ Remove Button -->
+    <button (click)="removeUser(user.id)" class="remove-btn">
+      🗑️ Remove
+    </button>
+  </li>
+</ul>
